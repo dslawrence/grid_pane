@@ -1,0 +1,23 @@
+/**
+ * Grid pane CSS
+ */
+
+.gpbox {
+	float:left;
+	text-align:center;
+	overflow:hidden;
+	display:block;
+	width:8.03%;
+	margin-right:.30%;
+	margin-bottom:4px;
+	height:40px;
+}
+
+a.gpbox {
+	text-decoration:none;
+}
+
+.gprow {
+	clear:both;
+	width:98%;
+}

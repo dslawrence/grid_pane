@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../grid_pane.js"></script>
+		<link href="../grid_pane.css" rel="stylesheet"></link>		
+		<style type="text/css">
+.color_one {
+	background-color:#ccc;
+}
+body {
+	overflow:hidden;
+}
+#grid {
+	width:100%;
+	height:100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+		</style>
+
+		<script type="text/javascript">
+		$(function() {
+			$('#grid').grid_pane({
+				show_gutter: 0,
+				width_units: 12,
+				post_render: function() {
+				}
+			});
+		});
+		</script>
+		<style type="text/css">
+			html, body {
+				height:100%;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="grid">
+		<div class="gpbox 1x1 show_gutter color_one">1</div>
+		<div class="gpbox 1x1 show_gutter color_one">2</div>
+		<div class="gpbox 1x1 color_one">3</div>
+		<div class="gpbox 1x1 color_one">4</div>
+		<div class="gpbox 1x1 color_one">5</div>
+		<div class="gpbox 1x1 color_one">6</div>
+		<div class="gpbox 1x1 color_one">7</div>
+		<div class="gpbox 1x1 color_one">8</div>
+		<div class="gpbox 1x1 color_one">9</div>
+		<div class="gpbox 1x1 color_one">10</div>
+		<div class="gpbox 1x1 color_one">11</div>
+		<div class="gpbox 1x1 color_one">12</div>
+
+		<div class="gprow"></div>
+
+		<div class="gpbox 1x1 color_one">1</div>
+		<div class="gpbox 1x1 color_one">2</div>
+		<div class="gpbox 1x1 color_one">3</div>
+		<div class="gpbox 1x1 color_one">4</div>
+		<div class="gpbox 1x1 color_one">5</div>
+		<div class="gpbox 1x1 color_one roverflow_right">6</div>
+		<div class="gpbox 1x1 color_one roverflow_left">7</div>
+		<div class="gpbox 1x1 color_one">8</div>
+		<div class="gpbox 1x1 color_one">9</div>
+		<div class="gpbox 1x1 color_one">10</div>
+		<div class="gpbox 1x1 color_one">11</div>
+		<div class="gpbox 1x1 color_one">12</div>
+
+		<div class="gprow"></div>
+
+		<div class="gpbox 2x2 rno_vertical_center rno_gutter roverflow_left roverflow_right">hello</div>
+
+		<div class="gpbox 4x2 font34 no_gutter color_one visible1 t.visible0">
+			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
+			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
+			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
+			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
+		<div class="gprow"></div>
+
+			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
+			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
+			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
+			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
+		</div>
+
+		<div class="gprow"></div>
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 4x2 font28 color_one p.font10">hello again</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+
+		<div class="gprow"></div>
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 4x2 rfont_28 color_one">hello again</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+
+		<div class="gprow"></div>
+
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 2x2 color_one">hello</div>
+
+	</div>
+
+  </body>
+</html>
