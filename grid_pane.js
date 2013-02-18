@@ -1,8 +1,8 @@
-window.touchpanes=new Array();
-window.touchpane_run_needed=0;
+window.grid_panes=new Array();
+window.grid_pane_run_needed=0;
 
 (function($) {
-	$.fn.touchpane=function( options ) {
+	$.fn.grid_pane=function( options ) {
 		var pane=this;
 
 		pane.meta={};
@@ -496,7 +496,7 @@ window.touchpane_run_needed=0;
 		// clear out the temp clone div to make sure we have no collisions
 		clone_div.html('');
 
-		window.touchpanes.push(pane);
+		window.grid_panes.push(pane);
 
 		pane.run();
 
@@ -506,24 +506,24 @@ window.touchpane_run_needed=0;
 
 $(function() {
 	setInterval(function() {
-		if (window.touchpane_run_needed) {
-			run_all_touchpanes();
-			window.touchpane_run_needed=0;
+		if (window.grid_pane_run_needed) {
+			run_all_grid_panes();
+			window.grid_pane_run_needed=0;
 		}
 	},100);
 
 	//setTimeout(function() {
-	//	run_all_touchpanes();
+	//	run_all_grid_panes();
 	//},300);
 
 	$(window).bind('orientationchange resize',function() {
-		window.touchpane_run_needed=1;
+		window.grid_pane_run_needed=1;
 	});
 
 });
 
-function run_all_touchpanes() {
-	for (var i=0;i<window.touchpanes.length;i++) {
-		window.touchpanes[i].run();
+function run_all_grid_panes() {
+	for (var i=0;i<window.grid_panes.length;i++) {
+		window.grid_panes[i].run();
 	}
 }
