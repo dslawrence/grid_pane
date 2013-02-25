@@ -1,3 +1,14 @@
+/*!
+ * grid_pane v0.6
+ * http://github.com/dslawrence/grid_pane
+ *
+ * Copyright 2013, David Lawrence
+ * Licenced under the MIT license:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * Date: Saturday Feb 23 10:24:33 2013 -0700
+ */
+
 window.grid_panes=new Array();
 window.grid_pane_run_needed=0;
 
@@ -34,6 +45,7 @@ window.grid_pane_run_needed=0;
 		m.phone_enabled=true;
 		m.tablet_enabled=true;
 		m.big_enabled=true;
+		m.show_grid_overlay=false;
 
 		//m.minimum_height_ratio=.75;
 		m.minimum_height_ratio=.8;
@@ -67,6 +79,7 @@ window.grid_pane_run_needed=0;
 
 		pane.html('<div class="gp_pane_centering" class="centering_pane">'+pane.html()+'</div>');
 		var centering_div=pane.find('.gp_pane_centering');
+
 
 		pane.grid_off=function() {
 			if (pane.grid_active) {
@@ -491,6 +504,9 @@ window.grid_pane_run_needed=0;
 
 			}
 			pane.meta.post_render( pane );
+			if (m.show_grid_overlay) {
+				pane.grid_on();
+			}
 		}
 
 		// clear out the temp clone div to make sure we have no collisions
@@ -499,6 +515,7 @@ window.grid_pane_run_needed=0;
 		window.grid_panes.push(pane);
 
 		pane.run();
+
 
 		return pane;
 	}
@@ -510,13 +527,12 @@ $(function() {
 			run_all_grid_panes();
 			window.grid_pane_run_needed=0;
 		}
-	},100);
-
-	//setTimeout(function() {
-	//	run_all_grid_panes();
-	//},300);
+	},10);
 
 	$(window).bind('orientationchange resize',function() {
+		for (var i=0;i<window.grid_panes.length;i++) {
+			window.grid_panes[i].hide();
+		}
 		window.grid_pane_run_needed=1;
 	});
 
@@ -524,6 +540,7 @@ $(function() {
 
 function run_all_grid_panes() {
 	for (var i=0;i<window.grid_panes.length;i++) {
+		window.grid_panes[i].show();
 		window.grid_panes[i].run();
 	}
 }

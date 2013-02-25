@@ -8,11 +8,31 @@
     <script src="../grid_pane.js"></script>
 		<link href="../grid_pane.css" rel="stylesheet"></link>		
 		<style type="text/css">
+.gpbox {
+	color:#FFF;
+}
 .color_one {
-	background-color:#ccc;
+	background-color:#2571EB;
+}
+a.color_one:hover {
+	background-color:#2F8EF0;
+}
+.color_two {
+	background-color:#009418;
+}
+a.color_two:hover {
+	background-color:#01A71C;
+}
+.color_three {
+	background-color:#5A38B5;
+}
+a.color_three:hover {
+	background-color:#653FC0;
 }
 body {
 	overflow:hidden;
+	background-color:#004050;
+	font-family:Arial;
 }
 #grid {
 	width:100%;
@@ -25,10 +45,7 @@ body {
 		<script type="text/javascript">
 		$(function() {
 			$('#grid').grid_pane({
-				show_gutter: 0,
-				width_units: 12,
-				post_render: function() {
-				}
+				show_grid_overlay: false		
 			});
 		});
 		</script>
@@ -40,69 +57,29 @@ body {
 	</head>
 	<body>
 	<div id="grid">
-		<div class="gpbox 1x1 show_gutter color_one">1</div>
-		<div class="gpbox 1x1 show_gutter color_one">2</div>
-		<div class="gpbox 1x1 color_one">3</div>
-		<div class="gpbox 1x1 color_one">4</div>
-		<div class="gpbox 1x1 color_one">5</div>
-		<div class="gpbox 1x1 color_one">6</div>
-		<div class="gpbox 1x1 color_one">7</div>
-		<div class="gpbox 1x1 color_one">8</div>
-		<div class="gpbox 1x1 color_one">9</div>
-		<div class="gpbox 1x1 color_one">10</div>
-		<div class="gpbox 1x1 color_one">11</div>
-		<div class="gpbox 1x1 color_one">12</div>
+		<a href="javascript:void(0);" class="gpbox 2x1 color_three font8">back</a>
+		<div class="gpbox 8x1 b.14x1 t.4x1 p.2x1"></div>
+		<a href="javascript:void(0);" class="gpbox 2x1 color_two x_gutter_off font8">forward</a>
+		<div class="gpbox 2x2 visible_on b.visible_on t.visible_off p.visible_off newline"></div>
+		<div class="gpbox 2x1 newline visible_on b.visible_on t.visible_off p.visible_off"></div>
+		<div class="gpbox 2x2 show_gutter color_one font20">Grid</div>
+		<div class="gpbox 2x2 show_gutter color_two font20 t.x_gutter_off p.x_gutter_off">Pane</div>
 
-		<div class="gprow"></div>
-
-		<div class="gpbox 1x1 color_one">1</div>
-		<div class="gpbox 1x1 color_one">2</div>
-		<div class="gpbox 1x1 color_one">3</div>
-		<div class="gpbox 1x1 color_one">4</div>
-		<div class="gpbox 1x1 color_one">5</div>
-		<div class="gpbox 1x1 color_one roverflow_right">6</div>
-		<div class="gpbox 1x1 color_one roverflow_left">7</div>
-		<div class="gpbox 1x1 color_one">8</div>
-		<div class="gpbox 1x1 color_one">9</div>
-		<div class="gpbox 1x1 color_one">10</div>
-		<div class="gpbox 1x1 color_one">11</div>
-		<div class="gpbox 1x1 color_one">12</div>
-
-		<div class="gprow"></div>
-
-		<div class="gpbox 2x2 rno_vertical_center rno_gutter roverflow_left roverflow_right">hello</div>
-
-		<div class="gpbox 4x2 font34 no_gutter color_one visible1 t.visible0">
-			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
-			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
-			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
-			<div class="gpbox 1x1 no_gutter" style="background-color:#fff;">10</div>
-		<div class="gprow"></div>
-
-			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
-			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
-			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
-			<div class="gpbox 1x1" style="background-color:#fff;">10</div>
+		<div class="gpbox 6x1 color_three font8 x_gutter_off b.x_gutter_on">
+		adaptable to phone, tablet, screen and wide screen sizes
 		</div>
 
-		<div class="gprow"></div>
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 4x2 font28 color_one p.font10">hello again</div>
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 2x2 color_one">hello</div>
-
-		<div class="gprow"></div>
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 4x2 rfont_28 color_one">hello again</div>
-		<div class="gpbox 2x2 color_one">hello</div>
-
-		<div class="gprow"></div>
-
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 2x2 color_one">hello</div>
-		<div class="gpbox 2x2 color_one">hello</div>
+		<div class="gpbox 6x1 color_three font8 x_gutter_off b.x_gutter_on">
+		try resizing the screen! everything adjusts.
+		</div>
+		<div class="gpbox 6x1 visible_on b.visible_off t.visible_off p.visible_off"></div>
+		<div class="gpbox 6x1 color_three font8 x_gutter_off b.x_gutter_on" >
+			some other cool thing here
+		</div>
+		<div class="gpbox 6x1 visible_on b.visible_off t.visible_off p.visible_off"></div>
+		<div class="gpbox 6x1 color_three font8 x_gutter_off b.x_gutter_on" >
+		can nest content as well
+		</div>
 
 	</div>
 
